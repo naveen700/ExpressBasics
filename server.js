@@ -20,10 +20,11 @@ app.use((req,res, next)=> {
 
 });
 
-app.use((req,res, next) =>{
-    res.render('Maintainence.hbs')
-;
-})
+// app.use((req,res, next) =>{
+//     res.render('Maintainence.hbs');
+//     next();
+// ;
+// })
 
 
 
@@ -80,6 +81,21 @@ app.get( '/bad' , (req, res) => {
         Found : 404
      ,  errorMessage : 'Bad Request'
     })
+
+
+} )
+
+
+
+app.get('/portfolio', (req,res)=>{
+    
+    res.render('Portfolio.hbs', {
+        name : 'Naveen Rana',
+         age : 22,
+         Dev: 'Software Developer'
+
+
+    });
 
 
 } )
