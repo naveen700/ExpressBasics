@@ -3,6 +3,8 @@ console.log('this is the server file');
 const hb = require('hbs');
 const express = require('express');
 const fs =  require('fs');
+const port = process.env.PORT || 3000;
+
 var app = express(); // to createthe app we have to do this call only
 
 //down below we have route handler, to handle the  routes
@@ -88,6 +90,8 @@ app.use(express.static(__dirname+ '/public')) ;
 
 
 // to bind the application to port of machine we need app.listen
-app.listen(3000);
+app.listen(port, ()=>{
+    console.log('This is Local Applicaiton');
+} );
 
 // note : - view is used as default folder by the expess for template
